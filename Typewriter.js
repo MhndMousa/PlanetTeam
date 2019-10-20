@@ -1,51 +1,52 @@
-class Typewritter {
+class Typewriter {
     constructor(text, delay, destination) {
-        self.currentChar = 1;
-        self.paused = false;
-        self.text = text;
-        self.delay = delay;
-        self.destination = destination;
+        this.currentChar = 1;
+        this.paused = false;
+        this.text = text;
+        this.delay = delay;
+        this.destination = destination;
     }
 
     // Inserts text into the desination based on delay
     type = () => {
-        if (self.paused == true) { 
+        if (this.paused == true) { 
             return; 
         }
     
-        var dest = document.getElementById(self.destination);
-        dest.innerHTML = text.substr(0, self.currentChar)+"_";
-        self.currentChar++;
+        var dest = document.getElementById(this.destination);
+        dest.innerHTML = this.text.substr(0, this.currentChar)+"_";
+        this.currentChar++;
     
-        if (self.currentChar > text.length) {
-            self.currentChar = 1;
-            self.paused = true;
-            setTimeout(() => self.type(self.text, self.delay, self.AbortSignaldestination), 5000);
+        if (this.currentChar > text.length) {
+            thsi.currentChar = 1;
+            this.paused = true;
+            setTimeout(() => this.type(this.text, this.delay, this.AbortSignaldestination), 5000);
         } else {
-            setTimeout(() => self.type(self.text, self.delay, self.destination), self.delay);
+            setTimeout(() => this.type(this.text, this.delay, this.destination), this.delay);
         }
-      }
+    }
     
     // Controls wether the typing method should start of stop
     startTyping = () => {
-        if (self.paused == true) {
-            self.paused = false;
-            self.currentChar = 1;
+        if (this.paused == true) {
+            this.paused = false;
+            this.currentChar = 1;
         } else {
-            self.type();
+            this.type();
         }
-     }
+    }
     
     // Starts or resumes the process of typing
     start = () => {
-        self.paused = false
-        self.startTyping()
+        console.log(this)
+        this.paused = false
+        this.startTyping()
     }
     
     // Pauses the processing of typing 
     pause = () => {
-        self.paused = true;
+        this.paused = true;
     }
 }
 
-export default Typewritter
+export default Typewriter
