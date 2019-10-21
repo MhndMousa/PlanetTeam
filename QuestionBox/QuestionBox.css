@@ -1,0 +1,78 @@
+.question-box {
+    padding: 10px;
+    maring: 0;
+    box-sizing: border-box;
+    position: relative;
+  
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.question-box .header-tab {
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 200px;
+
+    background-color: rgb(232, 228, 228);
+    border-radius: 10px;
+    border: 5px solid white;
+    position: absolute;
+    top: -10px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.question-box .header-tab h2 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(42, 95, 115);
+
+    width: 150px;
+}
+
+.question-box .header-tab .icon {
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: -13px;
+    left: -35px;
+}
+  
+.question-box .question{
+    padding: 10px;
+    margin-bottom: 5px;
+
+    width: 250px;
+    height: 390px;
+
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    color: rgb(42, 95, 115);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.question-box .answer {
+    padding: 5px;
+    margin-bottom: 5px;
+
+    background-color: rgba(255, 255, 255, 0.70);
+    border-radius: 42px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.question-box .answer:hover {
+    background-color: #333;
+    position: relative;
+    top: 1px;
+}
