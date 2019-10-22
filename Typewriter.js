@@ -1,44 +1,52 @@
-class Typewritter {
-  constructor(text, delay, destination) {
-    self.currentChar = 1;
-    self.paused = false;
-    self.text = text;
-    self.delay = delay;
-    self.destination = destination;
-  }
 
-  // Inserts text into the desination based on delay
-  type = () => {
-    if (self.paused == true) {
-      return;
+class Typewriter {
+    constructor(text, delay, destination) {
+        this.currentChar = 1;
+        this.paused = false;
+        this.text = text;
+        this.delay = delay;
+        this.destination = destination;
     }
 
-    var dest = document.getElementById(self.destination);
-    dest.innerHTML = text.substr(0, self.currentChar) + "_";
-    self.currentChar++;
-
-    if (self.currentChar > text.length) {
-      self.currentChar = 1;
-      self.paused = true;
-      setTimeout(
-        () => self.type(self.text, self.delay, self.AbortSignaldestination),
-        5000
-      );
-    } else {
-      setTimeout(
-        () => self.type(self.text, self.delay, self.destination),
-        self.delay
-      );
+    // Inserts text into the desination based on delay
+    type = () => {
+        if (this.paused == true) { 
+            return; 
+        }
+    
+        var dest = document.getElementById(this.destination);
+        dest.innerHTML = this.text.substr(0, this.currentChar)+"_";
+        this.currentChar++;
+    
+        if (this.currentChar > text.length) {
+            thsi.currentChar = 1;
+            this.paused = true;
+            setTimeout(() => this.type(this.text, this.delay, this.AbortSignaldestination), 5000);
+        } else {
+            setTimeout(() => this.type(this.text, this.delay, this.destination), this.delay);
+        }
     }
-  };
-
-  // Controls wether the typing method should start of stop
-  startTyping = () => {
-    if (self.paused == true) {
-      self.paused = false;
-      self.currentChar = 1;
-    } else {
-      self.type();
+    
+    // Controls wether the typing method should start of stop
+    startTyping = () => {
+        if (this.paused == true) {
+            this.paused = false;
+            this.currentChar = 1;
+        } else {
+            this.type();
+        }
+    }
+    
+    // Starts or resumes the process of typing
+    start = () => {
+        console.log(this)
+        this.paused = false
+        this.startTyping()
+    }
+    
+    // Pauses the processing of typing 
+    pause = () => {
+        this.paused = true;
     }
   };
 
@@ -54,4 +62,4 @@ class Typewritter {
   };
 }
 
-export default Typewritter;
+export default Typewriter
