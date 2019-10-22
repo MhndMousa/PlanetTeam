@@ -1,152 +1,89 @@
-
-        <a-entity position="-0.5 0.5 -0.5" scale="0.6 1.2 1" text-geometry="value: VAPORWAVE; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
-
-        <a-entity position="1 0 0.3" text-geometry="value: Aesthetic; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0;"
-                  material="shader: flat; color: white"></a-entity>
-        <a-entity position="1 0 0.3" text-geometry="value: Aesthetic; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0; bevelEnabled: true; bevelSize: 0.04; bevelThickness: 0.04; curveSegments: 1"
-                  material="shader: flat; color: white; transparent: true; opacity: 0.4"></a-entity>
-      </a-entity>
-<!-- By Ada Rose Edwards @lady_ada_king. -->
-<!DOCTYPE html>
 <html>
   <head>
-      <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
-      <script type="text/javascript">
-        AFRAME.registerComponent('cursor-listener', {
-          init: function () {
-            var lastIndex = -1;
-            var COLORS = ['red', 'green'];
-            this.el.addEventListener('click', function (evt) {
-              window.location = "./radiation-world.html"
-            });
-          }
-        });
-        AFRAME.registerComponent('cursor-listener2', {
-          init: function () {
-            this.el.addEventListener('click', function (evt) {
-              var node = document.getElementById("scene");
-              node.appendHtml("<a-entity text='value: Hello World;'></a-entity>")
-              console.log('I was clicked at: ', evt.detail.intersection.point);
-            });
-          }
-        });
-        AFRAME.registerComponent('cursor-listener3', {
-          init: function () {
-            var lastIndex = -1;
-            var COLORS = ['red', 'green', 'blue'];
-            this.el.addEventListener('click', function (evt) {
-              lastIndex = (lastIndex + 1) % COLORS.length;
-              this.setAttribute('material', 'color', COLORS[lastIndex]);
-              console.log('I was clicked at: ', evt.detail.intersection.point);
-            });
-          }
-        });
-        AFRAME.registerComponent('cursor-listener4', {
-          init: function () {
-            var lastIndex = -1;
-            var COLORS = ['red', 'green', 'blue'];
-            this.el.addEventListener('click', function (evt) {
-              lastIndex = (lastIndex + 1) % COLORS.length;
-              this.setAttribute('material', 'color', COLORS[lastIndex]);
-              console.log('I was clicked at: ', evt.detail.intersection.point);
-            });
-          }
-        });
-        AFRAME.registerComponent('cursor-listener5', {
-          init: function () {
-            var lastIndex = -1;
-            var COLORS = ['red', 'green', 'blue'];
-            this.el.addEventListener('click', function (evt) {
-              lastIndex = (lastIndex + 1) % COLORS.length;
-              this.setAttribute('material', 'color', COLORS[lastIndex]);
-              console.log('I was clicked at: ', evt.detail.intersection.point);
-            });
-          }
-        });
-      </script>
-
-    <meta name="description" content="Planet team">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-     <a-scene id="scene">
-       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
-        event-set__enter="_event: mouseenter; color: #8FF7FF"
-        event-set__leave="_event: mouseleave; color: #4CC3D9"></a-box> -->
+    <div class="glitch" data-text="Strobocops">
+      <span class="glitch__color glitch__color--red">Welcome to MiTerra</span>
+      <span class="glitch__color glitch__color--blue">Welcome to MiTerra</span>
+      <span class="glitch__color glitch__color--green">Welcome to MiTerra</span>
+      <span class="glitch__main">Welcome to MiTerra</span>
+      <span class="glitch__line glitch__line--first"></span>
+      <span class="glitch__line glitch__line--second"></span>
+    </div>
 
-      <a-assets>
-        <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
-        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
-        <img id="sky" src="https://cdnb.artstation.com/p/assets/images/images/005/845/001/large/robyn-domanico-example-galaxy-bg.jpg?1494191235" crossorigin="anonymous" />
-        
-        <img src="https://i.imgur.com/7Nu9vzi.jpg" id="p1" crossorigin="anonymous">
-        <img src="https://i.imgur.com/OkAFeQ9.jpg" id="p2" crossorigin="anonymous">
-        <img src="https://i.imgur.com/Qv6g7Y2.jpg" id="p3" crossorigin="anonymous">
-        <img src="https://i.imgur.com/aeTyIb1.jpg" id="p4" crossorigin="anonymous">
-        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/18fc9e8c-8d1d-4492-a808-d125b9310556/d7pxfv4-6a44b369-8c61-41c8-937b-432f356e5ec7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE4ZmM5ZThjLThkMWQtNDQ5Mi1hODA4LWQxMjViOTMxMDU1NlwvZDdweGZ2NC02YTQ0YjM2OS04YzYxLTQxYzgtOTM3Yi00MzJmMzU2ZTVlYzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ee-eKe4cRDHjefvkVSp2FdJrh0kSKMU9FOsYQC3-5pk" id="p5" crossorigin="anonymous">
-        <img src="https://i.imgur.com/7Nu9vzi.jpg" id="p6" crossorigin="anonymous">
-    
-
-        <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
-        <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
-        <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
-      </a-assets>
-
-      <a-sphere cursor-listener scale="2 2 2" geometry="primitive: sphere" position="1- 5  20" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p4;">
-          <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-        </a-sphere>
-      <a-sphere cursor-listener2 scale="2 2 2" geometry="primitive: sphere" position="10 5  2" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p1;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere>
-      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="-10 5   2" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p2;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere>
-      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="0 5   -1" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p3;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere>
-
-      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="10 5   14" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p5;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere>
-
-
-          
-      <!-- <a-sphere cursor-listener2 scale="2 2 2" geometry="primitive: sphere" position="0 6 -5" material="color: white; metalness:0.95; roughness: 0.03; sphericalEnvMap: #sky;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere>
-      <a-sphere cursor-listener3 scale="2 2 2" geometry="primitive: sphere" position="0 6 10" material="color: white; metalness:0.95; roughness: 0.03; sphericalEnvMap: #sky;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere>
-      <a-sphere cursor-listener4 scale="2 2 2" geometry="primitive: sphere" position="0 6 -2" material="color: white; metalness:0.95; roughness: 0.03; sphericalEnvMap: #sky;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere>
-      <a-sphere cursor-listener5 scale="2 2 2" geometry="primitive: sphere" position="0 6 3" material="color: white; metalness:0.95; roughness: 0.03; sphericalEnvMap: #sky;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
-      </a-sphere> -->
-                              
-      <a-entity position="-3 1 -6" rotation="5 0 0">
-        <!-- <a-entity
-          rotation="0 0 5"
-          position="0 2 0.2"
-          text-geometry="value: We Planet; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
-          material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"
-        ></a-entity> -->
-        <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-        <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
-        <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
-        <a-entity light="color: white; type: ambient;"></a-entity>
-        <a-sky src="#sky" rotation="0 -90 0"></a-sky>
-
-        <!-- <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity> -->
-        <a-entity camera position="3 1 15" look-controls>
-            <a-entity cursor="fuse: true; fuseTimeout: 1500"
-                      position="0 0 -3"
-                      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                      material="color: white; shader: flat">
-            </a-entity>
-          </a-entity>
-
-    </a-scene>
+    <div class="stars">
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+      <div class="stars__star"></div>
+    </div>
+    <button id="startBtn" class="start-btn">START</button>
+    <script>
+      document.getElementById("startBtn").addEventListener("click", function() {
+        window.location = "./game.html";
+      });
+    </script>
   </body>
 </html>

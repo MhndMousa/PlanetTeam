@@ -1,3 +1,4 @@
+
 class Typewriter {
     constructor(text, delay, destination) {
         this.currentChar = 1;
@@ -47,6 +48,18 @@ class Typewriter {
     pause = () => {
         this.paused = true;
     }
+  };
+
+  // Starts or resumes the process of typing
+  start = () => {
+    self.paused = false;
+    self.startTyping();
+  };
+
+  // Pauses the processing of typing
+  pause = () => {
+    self.paused = true;
+  };
 }
 
 export default Typewriter
