@@ -48,15 +48,15 @@
 
         </a-sphere> -->
     </a-assets>
+    <a-sphere cursor-planet-listener scale=".4 .4 .4" geometry="primitive: sphere" position="+1 1 .5" material="color: #000027; metalness:.5; roughness: .2; sphericalEnvMap: #p1;">
+    </a-sphere>
     <a-entity camera position="-1 1 1" look-controls>
         <a-entity cursor="fuse: true; fuseTimeout: 1500"
-                  position="0 0 -3"
+                  position="0 0 -1.5"
                   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                   material="color: white; shader: flat">
         </a-entity>
       </a-entity>
-    <a-sphere cursor-planet-listener scale="1 1 1" geometry="primitive: sphere" position="-1 2.5 -3" material="color: #000011; metalness:.5; roughness: .2; sphericalEnvMap: #p1;">
-    </a-sphere>
     <a-entity gltf-model="#cityModel" modify-materials></a-entity>
   </a-scene>
 </html>
