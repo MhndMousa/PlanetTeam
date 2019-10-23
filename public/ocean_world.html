@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script>
+            AFRAME.registerComponent('wobble-normal', {
+                schema: {},
+                tick: function (t) {
+                    this.el.components.material.material.normalMap.offset.x += 0.0001 * Math.sin(t/10000);
+                    this.el.components.material.material.normalMap.offset.y += 0.0001 * Math.cos(t/8000);
+                    this.el.components.material.material.normalScale.x = 0.5 + 0.5 * Math.cos(t/1000);
+                    this.el.components.material.material.normalScale.x = 0.5 + 0.5 * Math.sin(t/1200);
+                }
+            })
+          AFRAME.registerPrimitive('a-ocean-plane', {
+              defaultComponents: {
+                  geometry: {
+                      primitive: 'plane',
+                      height: 10000,
+                      width: 10000
+                  },
+                  rotation: '-90 0 0',
+                  material: {
+                      shader: 'super-standard',
+                      color: '#8ab39f',
+                      metalness: 1,
+                      roughness: 0.2,
+                      normalTextureRepeat: '50 50',
+                      normalTextureOffset: '0 0',
+                      normalScale: '0.5 0.5',
+                      opacity: 0.8
+                  },
+                  'wobble-normal': {}
+              },
+          });
+    </script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+		<!-- <a-asset-item id="Feisar-ship-obj" src="/a-frame-demos/a-frame-assets/Feisar_Ship_OBJ/Feisar_Ship.obj"></a-asset-item>
+		<a-asset-item id="Feisar-ship-mtl" src="/a-frame-demos/a-frame-assets/Feisar_Ship_OBJ/Feisar_Ship.mtl"></a-asset-item>
+
+		<a-asset-item id="race-track-obj" src="/a-frame-demos/a-frame-assets/race-track/race-track.obj"></a-asset-item>
+		<a-asset-item id="race-track-mtl" src="/a-frame-demos/a-frame-assets/race-track/race-track.mtl"></a-asset-item> -->
+        <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/https://samsunginternet.github.io/a-frame-demos/a-frame-assets/sky/CGSkies_0347_free.jpg" />
+		<img id="water-normal" src="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/waternormals.jpg" crossorigin="anonymous">
+
+		<!-- Sky is free sample sky from cgskies, buy one for commecial use -->
+		<img id="cgsky" src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/https://samsunginternet.github.io/a-frame-demos/a-frame-assets/sky/CGSkies_0347_free.jpg" crossorigin="anonymous">
+	</a-assets>
+        <a-ocean-plane material="normalMap: #water-normal; sphericalEnvMap: #night-sphere;" position="0 -2 0" >
+        </a-ocean-plane>
+    </a-scene>
+  </body>
+  <!--
+  <a-scene background="color: #ECECEC">
+    <a-ocean-plane material="normalMap: #water-normal; sphericalEnvMap: #night-sphere;" position="0 -2 0" >
+    </a-ocean-plane>
+  </a-scene> -->
+
+</html>

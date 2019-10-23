@@ -1,0 +1,147 @@
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Speed through ruined tracks in the ocean.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,target-densitydpi=device-dpi, user-scalable=no, minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<link rel="manifest" href="/a-frame-demos/racer/manifest.json">
+
+		<meta name="theme-color" content="#8953D8">
+		<title>A-Frame Racer</title>
+
+		<script src="https://cdn.polyfill.io/v2/polyfill.js?features=Array.isArray,Array.from,default-3.6,Element.prototype.before,Element.prototype.after,Element.prototype.remove"></script>
+
+
+
+		<!-- <script src="/a-frame-demos/scripts/init-service-worker.js"></script> -->
+
+		<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+
+		<script src="https://cdn.rawgit.com/ngokevin/aframe-look-at-component/master/dist/aframe-look-at-component.min.js"></script>
+
+		<script src="https://cdn.rawgit.com/SamsungInternet/a-frame-components/v0.0.1/dist/follow.js"></script>
+
+		<!-- <script src="curve.js"></script> -->
+
+		<script src="https://samsunginter.net/a-frame-components/dist/ocean-plane.js"></script>
+
+	</head>
+	<body class="post">
+		<a-scene inspector physics="debug: true">
+
+	<!-- Assets -->
+
+	<a-assets>
+		
+		<img id="water-normal" src="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/waternormals.jpg" crossorigin="anonymous" />
+
+		<!-- Sky is free sample sky from cgskies, buy one for commecial use -->
+		<img id="cgsky" src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/https://samsunginternet.github.io/a-frame-demos/a-frame-assets/sky/CGSkies_0347_free.jpg" crossorigin="anonymous" />
+	</a-assets>
+
+	<!-- CAMERA -->
+
+	<a-entity look-at="#ship" follow="target: #ship-camera-target;">
+		<a-entity position="0 2 0" rotation="0 180 0">
+
+			<!-- Disable the default wasd controls we are using those to control the ship -->
+			<a-camera wasd-controls="enabled: false;"></a-camera>
+		</a-entity>
+	</a-entity>
+
+
+	<!-- this is moved by the controller, it's rotation is set to the normal of ther service it is on' -->
+	<a-entity ship-controller="easing: 2; acceleration: 40; rollTarget: #ship; turnTarget: #controller-target;">
+
+		<!-- This is rotated by the controller -->
+		<a-entity id="controller-target" rotation="0 -90 0">
+			<a-entity id="ship-camera-target" position="0 0 -8"></a-entity>
+
+			<!-- this rolled by the controller -->
+			<a-obj-model src="#Feisar-ship-obj" mtl="#Feisar-ship-mtl" position="0 0.2 0" scale="0.3 0.3 0.3" rotation id="ship">
+				<!--<a-torus-knot position="0 4 -5" material="shader: super-standard; sphericalEnvMap: #cgsky; color: #8ab39f; normalMap: #water-normal; metalness: 1; roughness: 0.2; normalTextureRepeat: 50 50 50; opacity: 0.8;"></a-torus-knot>-->
+			</a-obj-model>
+		</a-entity>
+	</a-entity>
+
+	<!-- ENVIRONMENT -->
+
+	<a-sky src="#cgsky" position="0 -1 0" rotation="0 -90 0"></a-sky>
+	<a-entity light="color: #4c7cc2; intensity: 0.4; type: ambient;"></a-entity>
+	<a-entity light="color: #fffab7; intensity: 1.5" position="0 1 -5" id="sun"></a-entity>
+	<a-ocean-plane material="normalMap: #water-normal; sphericalEnvMap: #cgsky;"></a-ocean-plane>
+
+	<!-- TRACK -->
+
+	<a-curve id="track1" curve="type: CatmullRom;">
+		<a-curve-point position="0 -4 0">
+			<a-curve-point position="-30 8 10">
+				<a-curve-point position="-30 -6 30">
+					<a-curve-point position="0 8 40">
+						<a-curve-point position="0 -2 40">
+							<a-curve-point position="0 25 50">
+
+							</a-curve-point>
+						</a-curve-point>
+					</a-curve-point>
+				</a-curve-point>
+			</a-curve-point>
+		</a-curve-point>
+	</a-curve>
+
+	<a-curve id="track2" curve="type: CatmullRom;">
+		<a-curve-point position="-60 0 170"></a-curve-point>
+		<a-curve-point position="-60 15 260"></a-curve-point>
+		<a-curve-point position="0 10 280"></a-curve-point>
+		<a-curve-point position="30 10 240"></a-curve-point>
+	</a-curve>
+
+	<a-curve id="track3" curve="type: CatmullRom;">
+		<a-curve-point position="30 10 240"></a-curve-point>
+		<a-curve-point position="30 10 190"></a-curve-point>
+		<a-curve-point position="-60 -2 200"> </a-curve-point>
+		<a-curve-point position="-90 2 200"></a-curve-point>
+		<a-curve-point position="-120 2 200"></a-curve-point>
+		<a-curve-point position="-120 2 140"></a-curve-point>
+	</a-curve>
+
+	<a-curve id="track4" curve="type: CatmullRom;">
+		<a-curve-point position="-120 2 140"></a-curve-point>
+		<a-curve-point position="-120 2 100"></a-curve-point>
+		<a-curve-point position="-50 12 80"></a-curve-point>
+		<a-curve-point position="0 0 80"></a-curve-point>
+		<a-curve-point position="80 0 40"></a-curve-point>
+		<a-curve-point position="80 0.25 -20"></a-curve-point>
+		<a-curve-point position="40 0.5 0"></a-curve-point>
+	</a-curve>
+
+	<!--
+	<a-draw-curve curve="#track1" material="shader: line; color: blue;"></a-draw-curve>
+	<a-draw-curve curve="#track2" material="shader: line; color: blue;"></a-draw-curve>-->
+
+	<a-entity id="part1" floor-track clone-along-curve="curve: #track1; spacing: 6; scale: 1.5 1 2;" obj-model="obj: #race-track-obj; mtl: #race-track-mtl;"></a-entity>
+	<a-entity id="part2" floor-track clone-along-curve="curve: #track2; spacing: 6; scale: 1.5 1 2;" obj-model="obj: #race-track-obj; mtl: #race-track-mtl;"></a-entity>
+	<a-entity id="part3" floor-track clone-along-curve="curve: #track3; spacing: 6; scale: 1.5 1 2;" obj-model="obj: #race-track-obj; mtl: #race-track-mtl;"></a-entity>
+	<a-entity id="part4" floor-track clone-along-curve="curve: #track4; spacing: 6; scale: 1.5 1 2;" obj-model="obj: #race-track-obj; mtl: #race-track-mtl;"></a-entity>
+
+</a-scene>
+
+<script>
+	function getCurveFromTrack(a) {
+		return a.components['clone-along-curve'].data.curve.components.curve;
+	}
+
+	var currentFloor = {
+		height: 0,
+		normal: new THREE.Vector3(),
+		lastPoint: new THREE.Vector3(),
+		floorEl: null,
+		lastTangent: new THREE.Vector3()
+	}
+
+
+</script>
+
+	</body>
+</html>
