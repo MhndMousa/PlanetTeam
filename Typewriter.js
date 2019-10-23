@@ -18,8 +18,8 @@ class Typewriter {
         dest.innerHTML = this.text.substr(0, this.currentChar)+"_";
         this.currentChar++;
     
-        if (this.currentChar > text.length) {
-            thsi.currentChar = 1;
+        if (this.currentChar > this.text.length) {
+            this.currentChar = 1;
             this.paused = true;
             setTimeout(() => this.type(this.text, this.delay, this.AbortSignaldestination), 5000);
         } else {
@@ -39,7 +39,6 @@ class Typewriter {
     
     // Starts or resumes the process of typing
     start = () => {
-        console.log(this)
         this.paused = false
         this.startTyping()
     }
@@ -48,7 +47,6 @@ class Typewriter {
     pause = () => {
         this.paused = true;
     }
-  };
 
   // Starts or resumes the process of typing
   start = () => {
