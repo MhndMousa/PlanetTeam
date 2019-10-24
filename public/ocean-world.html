@@ -32,44 +32,44 @@
 
 	<!-- Assets -->
 
+	<!-- Camera pointer -->
+	<a-entity camera position="0 2 0" rotation="0 180 0" look-controls>
+        <a-entity cursor="fuse: true; fuseTimeout: 1500"
+                  position="0 0 -1.5"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: white; shader: flat">
+        </a-entity>
+      </a-entity>
+
 	<a-assets>
-		
+
 		<img id="water-normal" src="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/waternormals.jpg" crossorigin="anonymous" />
 
 		<!-- Sky is free sample sky from cgskies, buy one for commecial use -->
 		<img id="cgsky" src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/https://samsunginternet.github.io/a-frame-demos/a-frame-assets/sky/CGSkies_0347_free.jpg" crossorigin="anonymous" />
 	</a-assets>
 
-	<!-- CAMERA -->
-
-	<a-entity look-at="#ship" follow="target: #ship-camera-target;">
-		<a-entity position="0 2 0" rotation="0 180 0">
-
-			<!-- Disable the default wasd controls we are using those to control the ship -->
-			<a-camera wasd-controls="enabled: false;"></a-camera>
-		</a-entity>
+	<!-- old CAMERA -->
+	<!-- <a-entity look-at="#ship" follow="target: #ship-camera-target;">
+	<a-entity position="0 2 0" rotation="0 180 0">
+		<a-camera wasd-controls="enabled: false;"></a-camera>
 	</a-entity>
-
-
-	<!-- this is moved by the controller, it's rotation is set to the normal of ther service it is on' -->
-	<a-entity ship-controller="easing: 2; acceleration: 40; rollTarget: #ship; turnTarget: #controller-target;">
-
-		<!-- This is rotated by the controller -->
-		<a-entity id="controller-target" rotation="0 -90 0">
-			<a-entity id="ship-camera-target" position="0 0 -8"></a-entity>
-
-			<!-- this rolled by the controller -->
-			<a-obj-model src="#Feisar-ship-obj" mtl="#Feisar-ship-mtl" position="0 0.2 0" scale="0.3 0.3 0.3" rotation id="ship">
-				<!--<a-torus-knot position="0 4 -5" material="shader: super-standard; sphericalEnvMap: #cgsky; color: #8ab39f; normalMap: #water-normal; metalness: 1; roughness: 0.2; normalTextureRepeat: 50 50 50; opacity: 0.8;"></a-torus-knot>-->
-			</a-obj-model>
-		</a-entity>
+</a-entity>
+<a-entity ship-controller="easing: 2; acceleration: 40; rollTarget: #ship; turnTarget: #controller-target;">
+	<a-entity id="controller-target" rotation="0 -90 0">
+		<a-entity id="ship-camera-target" position="0 0 -8"></a-entity>
+		<a-obj-model src="#Feisar-ship-obj" mtl="#Feisar-ship-mtl" position="0 0.2 0" scale="0.3 0.3 0.3" rotation id="ship">
+		</a-obj-model>
 	</a-entity>
+</a-entity> -->
 
 	<!-- ENVIRONMENT -->
 
 	<a-sky src="#cgsky" position="0 -1 0" rotation="0 -90 0"></a-sky>
 	<a-entity light="color: #4c7cc2; intensity: 0.4; type: ambient;"></a-entity>
 	<a-entity light="color: #fffab7; intensity: 1.5" position="0 1 -5" id="sun"></a-entity>
+	<!-- <a-entity light="color: #4c7cc2; intensity: .1; type: ambient;"></a-entity>
+	<a-entity light="color: #fffab7; intensity: .5" position="-2 5 -5" id="sun"></a-entity> -->
 	<a-ocean-plane material="normalMap: #water-normal; sphericalEnvMap: #cgsky;"></a-ocean-plane>
 
 	<!-- TRACK -->
@@ -125,6 +125,7 @@
 	<a-entity id="part3" floor-track clone-along-curve="curve: #track3; spacing: 6; scale: 1.5 1 2;" obj-model="obj: #race-track-obj; mtl: #race-track-mtl;"></a-entity>
 	<a-entity id="part4" floor-track clone-along-curve="curve: #track4; spacing: 6; scale: 1.5 1 2;" obj-model="obj: #race-track-obj; mtl: #race-track-mtl;"></a-entity>
 
+
 </a-scene>
 
 <script>
@@ -140,6 +141,13 @@
 		lastTangent: new THREE.Vector3()
 	}
 
+	AFRAME.registerComponent('cursor-planet-listener', {
+      init: function () {
+        this.el.addEventListener('click', function (evt) {
+          window.location = "./game.html"
+        });
+      }
+    });
 
 </script>
 
