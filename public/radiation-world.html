@@ -52,34 +52,34 @@
     <a-sphere cursor-planet-listener scale=".4 .4 .4" geometry="primitive: sphere" position="+1 1 .5" material="color: #000027; metalness:.5; roughness: .2; sphericalEnvMap: #p1;">
     </a-sphere>
     <a-scene background="color: #333">
-      
+
       <a-assets></a-assets>
       <a-sky color="#ECECEC"></a-sky>
-      <a-text slice9="width: 1.5; height: 1; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174" 
+      <a-text slice9="width: 1.5; height: .7; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174"
               position="-1 1.8 -1"
               text="color: #fff; width: 1.2; height: .8; align: center; wrapCount: 20;"
-              value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
+              value="Oh no! Be careful, the radiation here is rather high. How do you want to proceed?">
       </a-text>
       <a-text choice-box
-              slice9="width: .9; height: .4; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174" 
-              position="-1.5 1 -1"
-              text="color: #fff; width: .9; height: .8; align: center; wrapCount: 13; value: Lorem ipsum dolor sit ametl"
-              value="Lorem ipsum dolor sit ametl"
+              slice9="width: .9; height: .4; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174"
+              position="-1.5 1.1 -1"
+              text="color: #fff; width: .8; height: .8; align: center; wrapCount: 13"
+              value="Leave the planet immediately"
               animation__mouseenterscale="property: scale; from: 1 1 1; to: 1.1 1.1 1.1; easing: easeInOutQuad; dir: alternate; loop: true; startEvents: mouseenter; dur: 1000; pauseEvents: mouseleave">
       </a-text>
       <a-text choice-box-1
-              slice9="width: .9; height: .4; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174" 
-              position="-.5 1 -1"
-              text="color: #fff; width: .9; height: .8; align: center; wrapCount: 13;"
-              value="Lorem ipsum dolor sit ametl"
+              slice9="width: .9; height: .4; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174"
+              position="-.5 1.1 -1"
+              text="color: #fff; width: .8; height: .8; align: center; wrapCount: 13;"
+              value="Try cleaning up nuclear waste"
               animation__mouseenterscale="property: scale; from: 1 1 1; to: 1.1 1.1 1.1; easing: easeInOutQuad; dir: alternate; loop: true; startEvents: mouseenter; dur: 1000; pauseEvents: mouseleave">
       </a-text>
       <a-text choice-box-2
-              slice9="width: .9; height: .4; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174" 
-              position="-1  .55 -1"
-              text="color: #fff; width: .9; height: .8; align: center; wrapCount: 13;"
+              slice9="width: .9; height: .6; left: 20; right: 43; top: 20; bottom: 43; src: https://cdn.glitch.com/e2b75ca4-5d3a-41b6-bc93-9df3410a5908%2Frounded-border.png?v=1571966665174"
+              position="-1  .45 -1"
+              text="color: #fff; width: .7; height: .8; align: center; wrapCount: 13;"
               class="asnwer-one"
-              value="Lorem ipsum dolor sit ametl"
+              value="Explore ways to help the planet recover its atmosphere"
               animation__mouseenterscale="property: scale; from: 1 1 1; to: 1.1 1.1 1.1; easing: easeInOutQuad; dir: alternate; loop: true; startEvents: mouseenter; dur: 1000; pauseEvents: mouseleave">
       </a-text>
     </a-scene>
