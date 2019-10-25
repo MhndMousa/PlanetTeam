@@ -70,41 +70,54 @@
         event-set__leave="_event: mouseleave; color: #4CC3D9"></a-box> -->
 
       <a-assets>
-        <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
-        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
-        <img id="sky" src="https://cdnb.artstation.com/p/assets/images/images/005/845/001/large/robyn-domanico-example-galaxy-bg.jpg?1494191235" crossorigin="anonymous" />
+        <img id="sky" src="./images/sky.jpg" crossorigin="anonymous" />
 
-        <img src="https://i.imgur.com/7Nu9vzi.jpg" id="p1" crossorigin="anonymous">
-        <img src="https://i.imgur.com/OkAFeQ9.jpg" id="p2" crossorigin="anonymous">
-        <img src="https://i.imgur.com/Qv6g7Y2.jpg" id="p3" crossorigin="anonymous">
-        <img src="https://i.imgur.com/aeTyIb1.jpg" id="p4" crossorigin="anonymous">
-        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/18fc9e8c-8d1d-4492-a808-d125b9310556/d7pxfv4-6a44b369-8c61-41c8-937b-432f356e5ec7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE4ZmM5ZThjLThkMWQtNDQ5Mi1hODA4LWQxMjViOTMxMDU1NlwvZDdweGZ2NC02YTQ0YjM2OS04YzYxLTQxYzgtOTM3Yi00MzJmMzU2ZTVlYzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ee-eKe4cRDHjefvkVSp2FdJrh0kSKMU9FOsYQC3-5pk" id="p5" crossorigin="anonymous">
-        <img src="https://i.imgur.com/7Nu9vzi.jpg" id="p6" crossorigin="anonymous">
+        <img src="./images/7Nu9vzi.jpg" id="p1" crossorigin="anonymous">
+        <img src="./images/OkAFeQ9.jpg" id="p2" crossorigin="anonymous">
+        <img src="./images/Qv6g7Y2.jpg" id="p3" crossorigin="anonymous">
+        <img src="./images/aeTyIb1.jpg" id="p4" crossorigin="anonymous">
+        <img src="./images/p5.png" id="p5" crossorigin="anonymous">
 
-
+   
         <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
         <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
         <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
       </a-assets>
 
-      <a-sphere cursor-listener scale="2 2 2" geometry="primitive: sphere" position="1- 5  20" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p4;">
-          <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
+      <a-sphere cursor-listener scale="2 2 2" geometry="primitive: sphere" position="1 5 20" src = "#p4" >
+          <a-animation easing="linear" attribute="rotation" dur="10000" to="40 180  0 " repeat="indefinite"></a-animation>
+          <a-animation direction="alternate-reverse" repeat="indefinite" attribute="scale" fill="forwards" from="2 2 2" to="2.03 2.03 2.03" dur="1500"></a-animation>
         </a-sphere>
 
-      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="10 5  2" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p1;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
+      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="10 5 2" src = "#p1">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="90 100  0 " repeat="indefinite"></a-animation>
+        <a-animation direction="alternate-reverse" repeat="indefinite" attribute="scale" fill="forwards" from="2 2 2" to="2.03 2.03 2.03" dur="1500"></a-animation>
+
       </a-sphere>
 
+<<<<<<< HEAD
       <a-sphere cursor-listener3 scale="2 2 2" geometry="primitive: sphere" position="-10 5   2" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p2;">
         <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
+||||||| merged common ancestors
+      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="-10 5   2" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p2;">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
+=======
+      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="-10 5 2" src = "#p2">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="40 80  0 " repeat="indefinite"></a-animation>
+        <a-animation direction="alternate-reverse" repeat="indefinite" attribute="scale" fill="forwards" from="2 2 2" to="2.03 2.03 2.03" dur="1500"></a-animation>
+
+        
+>>>>>>> c30a790207e60332d5cc48e56901193479614913
       </a-sphere>
 
-      <a-sphere cursor-listener2 scale="2 2 2" geometry="primitive: sphere" position="0 5   -1" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p3;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
+      <a-sphere cursor-listener2 scale="2 2 2" geometry="primitive: sphere" position="0 5 -1" src = "#p3">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="40 60  0 " repeat="indefinite"></a-animation>
+        <a-animation direction="alternate-reverse" repeat="indefinite" attribute="scale" fill="forwards" from="2 2 2" to="2.03 2.03 2.03" dur="1500"></a-animation>
       </a-sphere>
 
-      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="10 5   14" material="color: white; metalness:1; roughness: 0.03; sphericalEnvMap: #p5;">
-        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 360  0 " repeat="indefinite"></a-animation>
+      <a-sphere scale="2 2 2" geometry="primitive: sphere" position="10 5 14" src = "#p5">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="100 130  0 " repeat="indefinite"></a-animation>
+        <a-animation direction="alternate-reverse" repeat="indefinite" attribute="scale" fill="forwards" from="2 2 2" to="2.03 2.03 2.03" dur="1500"></a-animation>
       </a-sphere>
 
 
@@ -129,14 +142,15 @@
           text-geometry="value: We Planet; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
           material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"
         ></a-entity> -->
-        <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-        <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
-        <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
-        <a-entity light="color: white; type: ambient;"></a-entity>
+        <a-entity light="color: #ccccff; intensity: 0.4; type: ambient;" visible=""></a-entity>
+        <a-entity light="color: ffaaff; intensity: 0.5" position="5 5 5"></a-entity>
+        <a-entity light="color: white; intensity: 0.5" position="-10 10 50"></a-entity>
+        <a-entity light="color: white; intensirt: 0.9 type: ambient;"position="10 5 0"></a-entity>
         <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
         <!-- <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity> -->
         <a-entity camera position="3 1 15" look-controls>
+<<<<<<< HEAD
             <!-- <a-entity cursor="fuse: true; fuseTimeout: 1500"
                       position="0 0 -3"
                       geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
@@ -160,7 +174,46 @@
                 position="0 0 -3"
                 geometry="primitive: ring">
               </a-entity>
+||||||| merged common ancestors
+            <a-entity cursor="fuse: true; fuseTimeout: 1500"
+                      position="0 0 -3"
+                      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                      material="color: white; shader: flat">
+            </a-entity>
+=======
+            <!-- <a-entity light="color: #AFA; intensity: 1.5" position="-1 1 0"></a-entity> -->
+
+            <!-- <a-entity 
+            cursor="fuse: true; fuseTimeout: 1500"
+            animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+            animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+            animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+            position="0 0 -3"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: white; shader: flat">
+            </a-entity> -->
+            <!-- <a-entity
+                animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+                animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                cursor="fuse: true;"
+                material="color: white; shader: flat"
+                position="0 0 -3"
+                geometry="primitive: ring">
+              </a-entity> -->
+              <!-- <a-camera look-controls wasd-controls cursor="maxDistance: 30; fuse: true"> -->
+                <!-- progress bar -->
+                <a-entity position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.07;radiusInner: 0.05;" material="color: white; shader: flat"cursor="maxDistance: 30; fuse: true"> 
+
+                    <!-- <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation> -->
+                    <!-- <a-animation begin="fuse"  attribute="scale" fill="forwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"  repeat="indefinite" direction="alternate" ></a-animation> -->
+
+                    <a-animation begin = "fuse" direction="alternate-reverse" repeat="indefinite" attribute="scale" fill="forwards" from="1 1 1" [to="0.2 0.2 0.2" dur="1500"></a-animation>
+                </a-entity>
+
+>>>>>>> c30a790207e60332d5cc48e56901193479614913
           </a-entity>
+  
 
     </a-scene>
   </body>
