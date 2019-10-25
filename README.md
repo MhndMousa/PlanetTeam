@@ -1,4 +1,5 @@
 # PlanetTeam
+![Enlight396 2](https://user-images.githubusercontent.com/24231101/67546008-fadce100-f6af-11e9-9d97-fa8f9741feb4.JPG)
 
 Nowadays, teenagers lack the enthusiasm to explore science and discover the unknown. Most of them find science-related books and articles disengaging and “too hard” to focus on. We, the Miterra team, decided to change that. We created a game for teenagers 10 and above, which will be used to inform, actively educate, inspire to achieve more while entertaining at the same time. In the game, the story settles in the year of 8000 A.C. (After Catastrophe). In the event Catastrophe multiple planets were destroyed in the galaxy. Now, the Intergalactic Space Force team travels around the galaxy to save planets that were destroyed centuries ago. The player needs help to save the planets and restore life on them! The gamer will have a chance to join the group of scientists of NASA to tackle various problems on each planet to save the galaxy from further extermination.
 
